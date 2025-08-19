@@ -2,8 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Upload, MessageSquare, History, FileText, BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export const ResearchDashboard = () => {
+  const navigate = useNavigate();
   const recentPapers = [
     {
       title: "Attention is All You Need",
@@ -50,7 +52,11 @@ export const ResearchDashboard = () => {
               <p className="text-center text-muted-foreground mb-4">
                 Add PDFs, research papers, or academic articles to your knowledge base
               </p>
-              <Button variant="research" className="w-full">
+              <Button 
+                variant="research" 
+                className="w-full"
+                onClick={() => navigate('/upload')}
+              >
                 Upload Papers
               </Button>
             </CardContent>
@@ -67,7 +73,11 @@ export const ResearchDashboard = () => {
               <p className="text-center text-muted-foreground mb-4">
                 Ask questions and get intelligent answers from your research collection
               </p>
-              <Button variant="academic" className="w-full">
+              <Button 
+                variant="academic" 
+                className="w-full"
+                onClick={() => navigate('/chat')}
+              >
                 Start Chatting
               </Button>
             </CardContent>
@@ -84,7 +94,11 @@ export const ResearchDashboard = () => {
               <p className="text-center text-muted-foreground mb-4">
                 Track your research patterns and discover knowledge connections
               </p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => navigate('/analytics')}
+              >
                 View Analytics
               </Button>
             </CardContent>
@@ -116,7 +130,11 @@ export const ResearchDashboard = () => {
                   </div>
                 </div>
               ))}
-              <Button variant="outline" className="w-full mt-4">
+              <Button 
+                variant="outline" 
+                className="w-full mt-4"
+                onClick={() => navigate('/library')}
+              >
                 View All Papers
               </Button>
             </CardContent>

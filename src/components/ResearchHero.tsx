@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Brain, Search, BookOpen, Lightbulb } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/research-hero.jpg";
 
 export const ResearchHero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative min-h-screen bg-gradient-subtle overflow-hidden">
       {/* Background Pattern */}
@@ -25,13 +28,22 @@ export const ResearchHero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="research" size="lg" className="shadow-research">
+              <Button 
+                variant="research" 
+                size="lg" 
+                className="shadow-research"
+                onClick={() => navigate('/upload')}
+              >
                 <Brain className="mr-2 h-5 w-5" />
                 Start Researching
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => navigate('/chat')}
+              >
                 <BookOpen className="mr-2 h-5 w-5" />
-                Watch Demo
+                Try Demo Chat
               </Button>
             </div>
             
